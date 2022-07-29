@@ -84,15 +84,21 @@ exports.deleteUser = async (req, res) => {
 };
 // Delete multiple users by id
 exports.deleteMutipleUsers = async (req, res) => {
-  try {
-    await User.destroy({
-      where: {
-        id: [...req.body.ids],
-      },
-    });
-    res.json({
-      message: "User Deleted",
-    });
+
+	try {
+		if (Array.isArray(req.body.id)) {
+			await User.destroy({
+				where: {
+					id: [...req.body.id],
+				},
+			});
+			res.json({
+				message: "User/s Deleted",
+			});
+		} else {
+			res.status(400).json({ error: "id must be an array of id" });
+		}
+    
   } catch (err) {
     console.log(err);
 
