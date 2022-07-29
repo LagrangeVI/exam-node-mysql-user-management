@@ -8,7 +8,7 @@
     "seed": "sequelize db:seed:all",
     "seed-undo": "sequelize db:seed:undo:all",
     "migrate": "sequelize db:migrate",
-    "initialize": "sequelize db:migrate && sequelize db:seed:all",
+    "init-start": "sequelize db:migrate && sequelize db:seed:all && nodemon server",
     "test": "node test.js"
   },
   "repository": {
