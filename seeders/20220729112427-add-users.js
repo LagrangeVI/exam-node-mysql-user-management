@@ -15,6 +15,7 @@ module.exports = {
           email: "juancruz@email.com",
           username: "juan77",
           password: "password",
+          createdAt: new Date()
         },
         {
           first_name: "Pedro",
@@ -25,6 +26,7 @@ module.exports = {
           email: "pedro66@email.com",
           username: "pedro99",
           password: "password",
+          createdAt: new Date()
         },
         {
           first_name: "Tom",
@@ -35,6 +37,7 @@ module.exports = {
           email: "tomabad@email.com",
           username: "tommy22",
           password: "password",
+          createdAt: new Date()
         },
         {
           first_name: "Pepito",
@@ -45,6 +48,7 @@ module.exports = {
           email: "pepito@email.com",
           username: "pepito69",
           password: "password",
+          createdAt: new Date()
         },
       ],
       {}

@@ -2,7 +2,7 @@ const axios = require('axios')
 
 const base_url = "http://localhost:3000/api"
 
-exports.useAxios = async (method, path, req, ) => {
+exports.useAxios = async (method, path, req={}, ) => {
 
   const ENDPOINT = `${base_url}${path}`
 
@@ -25,11 +25,11 @@ exports.useAxios = async (method, path, req, ) => {
     let data = response.data
 
     if (code >= 200 && code < 300) {
-      console.log(`\nSUCCESS:  ${code} ${path} \n${JSON.stringify(req)}\n\n`)
+      console.log(`\nSUCCESS:  ${code} ${path} `)
 		} else {
-			console.log(`\nFAILED:  ${code} ${path} \n${JSON.stringify(req)}\n\n`)
+			console.log(`\nFAILED:  ${code} ${path} `)
 		}
-		console.log(JSON.stringify(data))
+		console.log(data)
 	} catch (error) {
 		console.log(`\nERROR:  ${error} ${path} ${req}`)
   }

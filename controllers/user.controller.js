@@ -8,7 +8,7 @@ exports.getUsers = async (req, res) => {
         exclude: ["password"],
       },
     });
-    res.send(user);
+    res.send({...user});
   } catch (err) {
     console.log(err);
     res.status(400).json({ error: err.errors[0].message });
@@ -29,7 +29,7 @@ exports.getUserById = async (req, res) => {
         exclude: ["password"],
       },
     });
-    res.send(user[0]);
+    res.send({...user[0]});
   } catch (err) {
     console.log(err);
     res.status(400).json({ error: err.errors[0].message });

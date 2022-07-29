@@ -10,13 +10,13 @@ const {
   deleteMutipleUsers,
 } = require("../controllers/user.controller");
 
-router.get("/users", getUsers);
-router.post("/users", createUser);
+router.get("/getAllUsers", getUsers);
+router.post("/createUser", createUser);
 
-router.get("/user/:id", getUserById);
-router.put("/user/:id", editUser);
+router.get("/getUserByID/:id", getUserById);
+router.put("/editUser/:id", editUser);
 
-router.delete("/user/:id", deleteUser);
+router.delete("/deleteUser/:id", deleteUser);
 
 router.delete("/users/delete", deleteMutipleUsers);
 
