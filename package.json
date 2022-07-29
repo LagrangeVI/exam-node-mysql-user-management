@@ -4,11 +4,12 @@
   "description": "exam",
   "main": "server.js",
   "scripts": {
+    "init-start": "npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all && nodemon server",
     "start": "nodemon server",
-    "seed": "sequelize db:seed:all",
-    "seed-undo": "sequelize db:seed:undo:all",
-    "migrate": "sequelize db:migrate",
-    "init-start": "sequelize db:migrate && sequelize db:seed:all && nodemon server",
+    "seed": "npx sequelize-cli db:seed:all",
+    "seed-undo": "npx sequelize-cli db:seed:undo:all",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate-undo": "npx sequelize-cli db:migrate:undo",
     "test": "node test.js"
   },
   "repository": {
