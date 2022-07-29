@@ -35,6 +35,16 @@ module.exports = {
           username: "tommy22",
           password: "password",
         },
+        {
+          first_name: "Pepito",
+          last_name: "Manaloto",
+          address: "Manila",
+          post_code: "768",
+          contact_number: "09984569131",
+          email: "pepito@email.com",
+          username: "pepito69",
+          password: "password",
+        },
       ],
       {}
     );
@@ -55,6 +65,7 @@ module.exports = {
         { username: "juan77" },
         { username: "pedro99" },
         { username: "tommy22" },
+        { username: "pepito69" },
       ],
     });
     /**
