@@ -1,0 +1,23 @@
+{
+  "name": "exam-node-mysql-user-management",
+  "version": "1.0.0",
+  "description": "exam",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LagrangeVI/exam-node-mysql-user-management.git"
+  },
+  "author": "Lagrange",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LagrangeVI/exam-node-mysql-user-management/issues"
+  },
+  "homepage": "https://github.com/LagrangeVI/exam-node-mysql-user-management#readme",
+  "dependencies": {
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+  }
+}
