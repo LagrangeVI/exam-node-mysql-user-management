@@ -11,7 +11,10 @@ To reset after test:
 1. Run `npm run migrate-undo` to drop users table and data in it. 
 2. Run `npm run init-start` to setup database and seed with test data.
 
+
+
 ```USER``` model:
+
 `first_name` 
 type: STRING,
 Required: true,
@@ -37,6 +40,7 @@ unique: true,
 
 `password`
 type: STRING,
+
 
 
 Available endpoints:
