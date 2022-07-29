@@ -1,16 +1,17 @@
-const Sequelize = require("sequelize");
-const sequelize = new Sequelize(
- 'user_management',
- 'root',
- 'pass',
-  {
-    host: 'localhost',
-    dialect: 'mysql'
-  }
-);
+const express = require('express');
+const app = express();
 
-sequelize.authenticate().then(() => {
-	console.log('Connection has been established successfully.');
-}).catch((error) => {
-	console.error('Unable to connect to the database: ', error);
+//require db connection
+require('./config/db');
+
+//allows the use of JSON in the express app
+app.use(express.json());
+
+//define api routes
+// app.use('/api/', require('./routes/item'));
+
+//Assign port from env if available
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+	console.log(`Server running at port ${port}`);
 });
