@@ -17,6 +17,9 @@ exports.getUsers = async (req, res) => {
 
 // Get user by id
 exports.getUserById = async (req, res) => {
+  if (Number.isInteger(parseInt(req.params.id)) == false)
+    res.status(400).json({ error: "id must be a number" });
+
   try {
     const user = await User.findAll({
       where: {
@@ -49,10 +52,13 @@ exports.createUser = async (req, res) => {
 
 // Edit user by id
 exports.editUser = async (req, res) => {
+  if (Number.isInteger(parseInt(req.params.id)) == false)
+    res.status(400).json({ error: "id must be a number" });
+
   try {
     await User.update(req.body, {
       where: {
-        id: req.params.id,
+        id: Number(req.params.id),
       },
     });
     res.json({
@@ -67,10 +73,13 @@ exports.editUser = async (req, res) => {
 
 // Delete users by id
 exports.deleteUser = async (req, res) => {
+	if (Number.isInteger(parseInt(req.params.id)) == false)
+		res.status(400).json({ error: "id must be a number" });
+
   try {
     await User.destroy({
       where: {
-        id: req.params.id,
+        id: parseInt(req.params.id),
       },
     });
     res.json({
@@ -84,21 +93,18 @@ exports.deleteUser = async (req, res) => {
 };
 // Delete multiple users by id
 exports.deleteMutipleUsers = async (req, res) => {
+  try {
+    if (Array.isArray(req.body.id) == false)
+      res.status(400).json({ error: "id must be an array of id" });
 
-	try {
-		if (Array.isArray(req.body.id)) {
-			await User.destroy({
-				where: {
-					id: [...req.body.id],
-				},
-			});
-			res.json({
-				message: "User/s Deleted",
-			});
-		} else {
-			res.status(400).json({ error: "id must be an array of id" });
-		}
-    
+    await User.destroy({
+      where: {
+        id: [...req.body.id],
+      },
+    });
+    res.json({
+      message: "User/s Deleted",
+    });
   } catch (err) {
     console.log(err);
 
