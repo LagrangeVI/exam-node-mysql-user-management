@@ -8,7 +8,8 @@
     "seed": "sequelize db:seed:all",
     "seed-undo": "sequelize db:seed:undo:all",
     "migrate": "sequelize db:migrate",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "initialize": "sequelize db:migrate && sequelize db:seed:all",
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
@@ -21,11 +22,13 @@
   },
   "homepage": "https://github.com/LagrangeVI/exam-node-mysql-user-management#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.3"
   },
   "devDependencies": {
+    "mocha": "^10.0.0",
     "nock": "^13.2.9",
     "nodemon": "^2.0.19"
   }
